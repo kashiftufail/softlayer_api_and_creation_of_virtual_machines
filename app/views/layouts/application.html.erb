@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Softlayer Api</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="notice"><%=notice%></div>
+<div class="alert"><%=alert%></div>
+<div class="login" style="float: right;background: aqua;margin-right: 80px;">
+<%if admin_signed_in?%>
+Welcome <%=@user.email%>|<%=link_to "Logout" ,"/sign_out"%>
+<%end%>
+  </div>
+<%= yield %>
+
+</body>
+</html>
