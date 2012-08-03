@@ -36,9 +36,12 @@ ActiveRecord::Schema.define(:version => 20120622071949) do
     t.string   "email"
     t.string   "project_name"
     t.string   "company_name"
-    t.boolean  "is_activated", :default => true
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.boolean  "is_activated",   :default => true
+    t.integer  "admin_id"
+    t.string   "server_uniq_id"
+    t.string   "ip_address"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
 end

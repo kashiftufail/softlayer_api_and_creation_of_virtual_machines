@@ -1,0 +1,27 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Project name</th>
+    <th>Company name</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.project_name %></td>
+        <td><%= user.company_name %></td>
+        <td><%= link_to 'Destroy', user, confirm: 'Are you sure you want to delete?', method: :delete %></td>
+        <% if user.is_activated == true %>
+            <td><%= link_to 'Disable User', "javascript:;", :onclick => "disable_user('#{user.id}')" %></td>
+        <% else %>
+            <td><%= link_to 'Enable User', "javascript:;", :onclick => "enable_user('#{user.id}')" %></td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>

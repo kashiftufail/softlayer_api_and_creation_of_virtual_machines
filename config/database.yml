@@ -7,7 +7,6 @@ development:
   adapter: mysql
   database: virtual_machine
   pool: 5
-  timeout: 5000
   username: root
   password: root
 
